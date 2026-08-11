@@ -1,0 +1,2803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Sofii ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: "Montserrat", sans-serif;
+    color: #f5e8ec;
+
+    background:
+        radial-gradient(circle at 10% 10%, rgba(120,45,70,.45), transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(82,39,82,.5), transparent 35%),
+        linear-gradient(135deg,#0d070c,#1d0b15,#2b101d,#120910);
+}
+
+
+/* =========================================================
+   PAGES
+========================================================= */
+
+.page {
+    min-height: 100vh;
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    animation: pageIn .7s ease;
+}
+
+.page.active {
+    display: flex;
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================================
+   OUTER WEBSITE BORDER
+========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 12px;
+
+    z-index: 9998;
+
+    pointer-events: none;
+
+    border: 1px solid rgba(255,151,180,.35);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 0 10px rgba(255,105,145,.15),
+        0 0 25px rgba(255,105,145,.12),
+        inset 0 0 20px rgba(255,105,145,.05);
+
+    animation: borderGlow 4s ease-in-out infinite;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+    inset: 20px;
+
+    z-index: 9997;
+
+    pointer-events: none;
+
+    border: 1px solid rgba(255,210,220,.12);
+
+    border-radius: 20px;
+}
+
+@keyframes borderGlow {
+    0%,100% {
+        border-color: rgba(255,151,180,.25);
+
+        box-shadow:
+            0 0 8px rgba(255,105,145,.12),
+            0 0 20px rgba(255,105,145,.08);
+    }
+
+    50% {
+        border-color: rgba(255,151,180,.65);
+
+        box-shadow:
+            0 0 12px rgba(255,105,145,.3),
+            0 0 35px rgba(255,105,145,.18);
+    }
+}
+
+
+/* =========================================================
+   GLASS CARD
+========================================================= */
+
+.card {
+    width: 92%;
+    max-width: 720px;
+
+    padding: 45px 32px;
+
+    position: relative;
+
+    z-index: 5;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    border-radius: 32px;
+
+    background: rgba(28,12,21,.76);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    border: 1px solid rgba(255,190,210,.16);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45),
+        inset 0 1px 0 rgba(255,255,255,.07);
+}
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    left: -150px;
+    top: -180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,160,190,.13),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+h1,h2,h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    color: #ffd6e1;
+
+    font-weight: 600;
+
+    letter-spacing: .5px;
+}
+
+h1 {
+    font-size: clamp(2.5rem,7vw,4rem);
+
+    line-height: 1.05;
+
+    margin-bottom: 18px;
+
+    text-shadow:
+        0 5px 25px rgba(255,90,140,.15);
+}
+
+p {
+    color: #ead5dc;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+.name {
+    color: #ff8fac;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-weight: 700;
+
+    text-shadow:
+        0 0 18px rgba(255,100,140,.35);
+}
+
+
+/* =========================================================
+   STICKERS
+========================================================= */
+
+.sticker-area {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+
+    margin: 15px 0 25px;
+}
+
+.sticker {
+    font-size: 50px;
+
+    animation: stickerFloat 3.5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(0 8px 12px rgba(0,0,0,.35));
+}
+
+.sticker:nth-child(2) {
+    animation-delay: .5s;
+}
+
+.sticker:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes stickerFloat {
+    0%,100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-9px) rotate(3deg);
+    }
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.icon {
+    font-size: 75px;
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.7s infinite;
+
+    filter:
+        drop-shadow(0 10px 20px rgba(0,0,0,.35));
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button {
+    border: none;
+
+    padding: 14px 30px;
+
+    margin: 8px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: .9rem;
+
+    font-weight: 600;
+
+    color: white;
+
+    background: #9e4d68;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.25);
+
+    transition: .3s ease;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    background: #bd617e;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,.35);
+}
+
+.yes,
+.unlock,
+.continue {
+    background: #a84f6c;
+}
+
+.no,
+.back-button {
+    background: #57303e;
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+input[type="password"] {
+    width: 80%;
+    max-width: 360px;
+
+    padding: 16px 20px;
+
+    border-radius: 50px;
+
+    border: 1px solid rgba(255,190,210,.2);
+
+    outline: none;
+
+    background: rgba(255,255,255,.08);
+
+    color: white;
+
+    text-align: center;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-size: .95rem;
+}
+
+input[type="password"]::placeholder {
+    color: #cbaeb8;
+}
+
+input[type="password"]:focus {
+    border-color: #d06a87;
+
+    box-shadow:
+        0 0 0 4px rgba(208,106,135,.1);
+}
+
+.hint {
+    margin-top: 15px;
+
+    color: #bda0aa;
+
+    font-size: .85rem;
+}
+
+.error {
+    display: none;
+
+    margin-top: 15px;
+
+    color: #ff8da7;
+
+    font-weight: 600;
+
+    animation: shake .4s;
+}
+
+@keyframes shake {
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    75% {
+        transform: translateX(8px);
+    }
+}
+
+#noMessage {
+    display: none;
+
+    margin-top: 25px;
+
+    color: #ffb0c1;
+
+    font-family: "Cormorant Garamond",serif;
+
+    font-size: 1.35rem;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   🌸 PAGE 1 — FLOWERS
+========================================================= */
+
+#passwordPage::before {
+    content: "🌸  🌷  🌺  🌸  🌷";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 12px;
+
+    text-align: center;
+
+    font-size: 32px;
+
+    letter-spacing: 12px;
+
+    opacity: .75;
+
+    filter:
+        drop-shadow(0 0 8px rgba(255,120,160,.4));
+
+    animation: flowerSway 4s ease-in-out infinite;
+}
+
+#passwordPage::after {
+    content: "🌿  🌸  🌿";
+
+    position: absolute;
+
+    top: 18px;
+    right: 25px;
+
+    font-size: 30px;
+
+    opacity: .65;
+
+    transform: rotate(-10deg);
+}
+
+#passwordPage .card::after {
+    content: "🌿🌸🌿";
+
+    position: absolute;
+
+    bottom: 10px;
+    left: 12px;
+
+    font-size: 27px;
+
+    opacity: .55;
+
+    transform: rotate(-10deg);
+}
+
+@keyframes flowerSway {
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+}
+
+
+/* =========================================================
+   🌹 PAGE 2 — ROSES
+========================================================= */
+
+#page1::before {
+    content: "🌹";
+
+    position: absolute;
+
+    top: 30px;
+    left: 35px;
+
+    font-size: 65px;
+
+    opacity: .7;
+
+    transform: rotate(-15deg);
+
+    filter:
+        drop-shadow(0 0 12px rgba(255,80,120,.4));
+}
+
+#page1::after {
+    content: "🌹";
+
+    position: absolute;
+
+    bottom: 30px;
+    right: 35px;
+
+    font-size: 65px;
+
+    opacity: .7;
+
+    transform: rotate(15deg);
+
+    filter:
+        drop-shadow(0 0 12px rgba(255,80,120,.4));
+}
+
+
+/* =========================================================
+   💌 PAGE 3 — LETTER
+========================================================= */
+
+#page2 {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(135,58,78,.28),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #13090e,
+            #29121b,
+            #1a0b12
+        );
+}
+
+#page2 .love-card {
+    border:
+        1px solid rgba(235,170,185,.28);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.5),
+        inset 0 0 40px rgba(255,180,200,.025);
+}
+
+#page2 .love-card::before {
+    content: "❦";
+
+    position: absolute;
+
+    top: 12px;
+    left: 20px;
+
+    font-size: 45px;
+
+    color: #d58a9e;
+
+    opacity: .6;
+}
+
+#page2 .love-card::after {
+    content: "❦";
+
+    position: absolute;
+
+    bottom: 12px;
+    right: 20px;
+
+    font-size: 45px;
+
+    color: #d58a9e;
+
+    opacity: .6;
+
+    transform: rotate(180deg);
+}
+
+#page2 .letter {
+    position: relative;
+
+    border:
+        1px solid rgba(224,170,183,.2);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,235,238,.06),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        inset 0 0 30px rgba(255,190,205,.025);
+}
+
+#page2 .letter::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 10px;
+    right: 18px;
+
+    color: #e79aae;
+
+    font-size: 22px;
+}
+
+#page2 .letter::after {
+    content: "♡";
+
+    position: absolute;
+
+    bottom: 10px;
+    left: 18px;
+
+    color: #e79aae;
+
+    font-size: 25px;
+}
+
+.love-card {
+    max-height: 92vh;
+
+    overflow-y: auto;
+}
+
+.birthday-title {
+    font-size: clamp(2.5rem,7vw,4.2rem);
+}
+
+.birthday-subtitle {
+    color: #cdb6be;
+
+    margin-bottom: 25px;
+}
+
+.letter {
+    margin-top: 25px;
+
+    padding: 30px;
+
+    text-align: left;
+
+    border-radius: 24px;
+
+    background: rgba(255,255,255,.045);
+
+    border:
+        1px solid rgba(255,190,210,.1);
+}
+
+.letter p {
+    margin-bottom: 20px;
+
+    color: #e4ced6;
+}
+
+.final-love {
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 1.4rem !important;
+
+    color: #ffafc1 !important;
+
+    font-weight: 600;
+}
+
+.signature {
+    text-align: right;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    color: #e994a9 !important;
+
+    font-size: 1.2rem !important;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   🎁 GIFT PAGE
+========================================================= */
+
+#giftPage::before {
+    content: "✦     ✧     ✦     ✧     ✦";
+
+    position: absolute;
+
+    top: 25px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #ffb0c2;
+
+    font-size: 22px;
+
+    letter-spacing: 8px;
+
+    opacity: .65;
+
+    animation: sparkle 2s infinite alternate;
+}
+
+#giftPage::after {
+    content: "🎀";
+
+    position: absolute;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 35px;
+
+    opacity: .7;
+}
+
+@keyframes sparkle {
+    from {
+        opacity: .3;
+    }
+
+    to {
+        opacity: .9;
+    }
+}
+
+.gifts {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+
+    flex-wrap: wrap;
+
+    margin-top: 40px;
+}
+
+.gift {
+    cursor: pointer;
+
+    transition: transform .35s ease;
+}
+
+.gift:hover {
+    transform:
+        translateY(-13px)
+        scale(1.08);
+}
+
+.gift-box {
+    font-size: 80px;
+
+    filter:
+        drop-shadow(0 15px 20px rgba(0,0,0,.35));
+
+    animation:
+        giftWiggle 3s infinite;
+}
+
+.gift:nth-child(2) .gift-box {
+    animation-delay: .4s;
+}
+
+.gift:nth-child(3) .gift-box {
+    animation-delay: .8s;
+}
+
+.gift p {
+    margin-top: 5px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 1.3rem;
+
+    color: #ffc1cf;
+
+    font-weight: 600;
+}
+
+@keyframes giftWiggle {
+    0%,70%,100% {
+        transform: rotate(0);
+    }
+
+    75% {
+        transform: rotate(-7deg);
+    }
+
+    82% {
+        transform: rotate(7deg);
+    }
+
+    89% {
+        transform: rotate(-4deg);
+    }
+}
+
+
+/* =========================================================
+   🎵 MUSIC PAGE
+========================================================= */
+
+#gift1Page::before {
+    content: "♪  ♫  ♪  ♬  ♫";
+
+    position: absolute;
+
+    top: 25px;
+    left: 20px;
+
+    color: #ff9eb6;
+
+    font-size: 35px;
+
+    letter-spacing: 10px;
+
+    opacity: .6;
+
+    transform: rotate(-8deg);
+}
+
+#gift1Page::after {
+    content: "♫  ♪  ♬";
+
+    position: absolute;
+
+    bottom: 30px;
+    right: 25px;
+
+    color: #ff9eb6;
+
+    font-size: 32px;
+
+    letter-spacing: 8px;
+
+    opacity: .6;
+
+    transform: rotate(8deg);
+}
+
+.music-card {
+    max-width: 720px;
+}
+
+.video-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 560px;
+
+    margin: 25px auto;
+
+    aspect-ratio: 16/9;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 50px rgba(0,0,0,.45);
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+}
+
+
+/* =========================================================
+   📸 PHOTO PAGE
+========================================================= */
+
+#gift2Page {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,150,180,.15),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(160,100,160,.15),
+            transparent 30%
+        ),
+        #12090f;
+}
+
+#gift2Page::before {
+    content: "📷  ✨  📷";
+
+    position: absolute;
+
+    top: 18px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    font-size: 25px;
+
+    opacity: .55;
+
+    letter-spacing: 15px;
+}
+
+#gift2Page::after {
+    content: "♡";
+
+    position: absolute;
+
+    bottom: 20px;
+    left: 25px;
+
+    font-size: 50px;
+
+    color: #ff91ac;
+
+    opacity: .5;
+}
+
+.photo-page {
+    width: 95%;
+
+    max-width: 1100px;
+
+    max-height: 95vh;
+
+    overflow-y: auto;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    border-radius: 32px;
+
+    background:
+        rgba(28,12,21,.78);
+
+    backdrop-filter:
+        blur(22px);
+
+    border:
+        1px solid rgba(255,190,210,.25);
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.55),
+        inset 0 0 50px rgba(255,170,190,.025);
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.photo-title {
+    font-size:
+        clamp(2.5rem,7vw,4rem);
+}
+
+.photo-input {
+    margin: 7px;
+
+    padding: 8px;
+
+    max-width: 95%;
+
+    color: #e9d7de;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid rgba(255,190,210,.15);
+
+    border-radius: 12px;
+}
+
+.photo-gallery {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+    margin: 30px 0;
+}
+
+.photo-card {
+    width: 260px;
+
+    padding: 10px;
+
+    background: #f7edf0;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.4);
+
+    transition: transform .4s;
+
+    animation:
+        photoIn .8s ease;
+}
+
+.photo-card:nth-child(1) {
+    transform: rotate(-5deg);
+}
+
+.photo-card:nth-child(2) {
+    transform: rotate(4deg);
+}
+
+.photo-card:nth-child(3) {
+    transform: rotate(-3deg);
+}
+
+.photo-card:hover {
+    transform:
+        rotate(0)
+        scale(1.06)
+        translateY(-10px);
+
+    z-index: 5;
+}
+
+.photo-card img {
+    display: block;
+
+    width: 100%;
+    height: 330px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    background: #dfcdd2;
+}
+
+.photo-caption {
+    padding: 12px 5px 8px;
+
+    color: #67454f;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 1.2rem;
+
+    font-weight: 600;
+}
+
+@keyframes photoIn {
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(.85);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   ✨ WISH PAGE
+========================================================= */
+
+#gift3Page {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(130,48,75,.5),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(88,42,88,.55),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #0d070c,
+            #260e1a,
+            #321329,
+            #100810
+        );
+}
+
+#gift3Page::before {
+    content: "☾  ✦  ✧  ★  ✧  ✦";
+
+    position: absolute;
+
+    top: 20px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #ffd2df;
+
+    font-size: 30px;
+
+    letter-spacing: 10px;
+
+    opacity: .65;
+
+    animation:
+        starTwinkle 3s ease-in-out infinite;
+}
+
+#gift3Page::after {
+    content: "✧  ♡  ✧";
+
+    position: absolute;
+
+    bottom: 20px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #ffadc1;
+
+    font-size: 28px;
+
+    letter-spacing: 12px;
+
+    opacity: .6;
+}
+
+@keyframes starTwinkle {
+    0%,100% {
+        opacity: .35;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.stars {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(rgba(255,255,255,.8) 1px,transparent 1px),
+        radial-gradient(rgba(255,170,200,.6) 1px,transparent 1px);
+
+    background-size:
+        90px 90px,
+        150px 150px;
+
+    animation:
+        starsMove 18s linear infinite;
+
+    opacity: .35;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+.final-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 92%;
+
+    max-width: 760px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 45px 30px;
+
+    text-align: center;
+
+    border-radius: 32px;
+
+    background:
+        rgba(28,12,21,.78);
+
+    backdrop-filter:
+        blur(22px);
+
+    border:
+        1px solid rgba(255,190,210,.16);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.5);
+}
+
+.big-heart {
+    font-size: 90px;
+
+    animation:
+        heartBeat 1.5s infinite;
+
+    filter:
+        drop-shadow(0 0 25px rgba(255,80,130,.4));
+}
+
+@keyframes heartBeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.final-title {
+    font-size:
+        clamp(3rem,9vw,5rem);
+
+    color: #ffd4df;
+}
+
+.final-subtitle {
+    color: #c9adb7;
+
+    margin-bottom: 25px;
+}
+
+.final-letter {
+    padding: 30px;
+
+    text-align: left;
+
+    border-radius: 23px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid rgba(255,190,210,.1);
+}
+
+.final-letter p {
+    margin-bottom: 20px;
+
+    color: #e2cbd3;
+}
+
+.final-wish {
+    text-align: center;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size:
+        1.4rem !important;
+
+    color:
+        #ffb2c3 !important;
+
+    font-weight: 600;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(180,70,105,.1);
+}
+
+.forever {
+    margin-top: 30px;
+
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
+    font-size: 1.5rem;
+
+    color: #ffb2c3;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   🧸 LAST PAGE
+========================================================= */
+
+.last-page {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(142,54,82,.6),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #10070d,
+            #2b101d,
+            #160914
+        );
+}
+
+#lastPage::before {
+    content: "🧸   ♡   🧸";
+
+    position: absolute;
+
+    top: 20px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    font-size: 35px;
+
+    opacity: .7;
+
+    animation:
+        bearFloat 3s ease-in-out infinite;
+}
+
+#lastPage::after {
+    content: "♡  ✦  ♡  ✦  ♡";
+
+    position: absolute;
+
+    bottom: 20px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    color: #ff9eb5;
+
+    font-size: 24px;
+
+    letter-spacing: 8px;
+
+    opacity: .65;
+}
+
+.last-card {
+    animation:
+        lastAppear 1.2s ease;
+}
+
+@keyframes lastAppear {
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.88)
+            translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+.last-bears {
+    font-size: 80px;
+
+    margin: 15px 0;
+
+    animation:
+        bearFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes bearFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.last-heart {
+    font-size: 50px;
+
+    animation:
+        heartbeat 1.3s infinite;
+}
+
+.last-title {
+    font-size:
+        clamp(2.8rem,8vw,4.5rem);
+
+    color: #ffd6e1;
+}
+
+.last-message {
+    color: #dfc7d0;
+
+    margin:
+        20px 0 30px;
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+.floating-heart {
+    position: fixed;
+
+    bottom: -70px;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation:
+        romanticFloat 7s linear forwards;
+}
+
+@keyframes romanticFloat {
+    0% {
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(0)
+            scale(.6);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(30px)
+            rotate(180deg)
+            scale(1);
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            translateX(-30px)
+            rotate(360deg)
+            scale(1.2);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti {
+    position: fixed;
+
+    top: -20px;
+
+    width: 8px;
+    height: 10px;
+
+    z-index: 500;
+
+    pointer-events: none;
+
+    animation:
+        confettiFall 4s linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   CLICK HEART
+========================================================= */
+
+@keyframes clickHeart {
+    0% {
+        transform:
+            translate(-50%,-50%)
+            scale(.5);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(-50%,-150px)
+            scale(1.5);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px) {
+
+    body::before {
+        inset: 7px;
+        border-radius: 18px;
+    }
+
+    body::after {
+        inset: 13px;
+        border-radius: 15px;
+    }
+
+    .page {
+        padding: 20px;
+    }
+
+    .card {
+        width: 95%;
+        padding: 35px 20px;
+    }
+
+    h1 {
+        font-size: 2.7rem;
+    }
+
+    .letter,
+    .final-letter {
+        padding: 22px;
+    }
+
+    .gift-box {
+        font-size: 65px;
+    }
+
+    .photo-card {
+        width: 225px;
+    }
+
+    .photo-card img {
+        height: 290px;
+    }
+
+    .sticker {
+        font-size: 42px;
+    }
+
+    input[type="password"] {
+        width: 90%;
+    }
+
+    #passwordPage::before {
+        font-size: 22px;
+        letter-spacing: 5px;
+    }
+
+    #page1::before,
+    #page1::after {
+        font-size: 42px;
+    }
+
+    #gift3Page::before {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    #lastPage::before {
+        font-size: 25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     PASSWORD PAGE
+========================================================= -->
+
+<section id="passwordPage" class="page active">
+
+    <div class="card">
+
+        <div class="sticker-area">
+            <div class="sticker">🧸💕</div>
+            <div class="sticker">❤️</div>
+            <div class="sticker">🧸</div>
+        </div>
+
+        <div class="icon">🔐</div>
+
+        <h1>
+            Wait, Sofii...
+        </h1>
+
+        <p>
+            I made something special for you. ❤️
+            <br><br>
+            But first, you need the secret password. 🤫
+        </p>
+
+        <br>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter password"
+            onkeydown="if(event.key==='Enter') checkPassword()"
+        >
+
+        <br>
+
+        <button
+            class="unlock"
+            onclick="checkPassword()">
+            Unlock ❤️
+        </button>
+
+        <p class="hint">
+            💡 Hint: lulu
+        </p>
+
+        <p id="passwordError" class="error">
+            Wrong password 😭 Try again!
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     YES / NO PAGE
+========================================================= -->
+
+<section id="page1" class="page">
+
+    <div class="card">
+
+        <div class="sticker-area">
+            <div class="sticker">🧸💕</div>
+            <div class="sticker">💗</div>
+            <div class="sticker">🧸</div>
+        </div>
+
+        <h1>
+            Sofii... 🥺
+        </h1>
+
+        <p>
+            I made something special for you.
+            <br><br>
+            Do you want to see it? ❤️
+        </p>
+
+        <button
+            class="yes"
+            onclick="yesClicked()">
+            YES ❤️
+        </button>
+
+        <button
+            class="no"
+            onclick="noClicked()">
+            NO 😭
+        </button>
+
+        <div id="noMessage">
+            You don't need this? 😭
+            <br>
+            You don't have a choice... try again. ❤️
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BIRTHDAY LETTER
+========================================================= -->
+
+<section id="page2" class="page">
+
+    <div class="card love-card">
+
+        <div class="sticker-area">
+            <div class="sticker">🧸❤️</div>
+            <div class="sticker">💕</div>
+            <div class="sticker">🧸💗</div>
+        </div>
+
+        <div class="icon">🎂</div>
+
+        <h1 class="birthday-title">
+            Happy Birthday,
+            <span class="name">Sofii</span> ❤️
+        </h1>
+
+        <p class="birthday-subtitle">
+            Today is a very special day because
+            the world was blessed with someone
+            as beautiful as you. ✨
+        </p>
+
+        <div class="letter">
+
+            <p>My Dearest Sofii, ❤️</p>
+
+            <p>
+                Happy Birthday to the most beautiful
+                person in my life. I don't think words
+                will ever be enough to explain how much
+                you mean to me, but today I want to try.
+            </p>
+
+            <p>
+                Since you came into my life, so many
+                ordinary moments have become special.
+                Your smile can make my worst days better,
+                and simply knowing that you are there
+                makes my world a little brighter.
+            </p>
+
+            <p>
+                I love the little things about you —
+                the way you smile, the way you talk,
+                the way you care, and all those tiny
+                things you probably don't even realize
+                I notice.
+            </p>
+
+            <p>
+                Somehow, you have become such an important
+                part of my heart that I can't imagine
+                my life without you.
+            </p>
+
+            <p>
+                On your birthday, I don't just wish you
+                happiness for today. I wish you a life
+                filled with beautiful moments, endless
+                smiles, big dreams coming true, and all
+                the love your heart can hold. ✨
+            </p>
+
+            <p>
+                I hope that through all the good days
+                and difficult days ahead, I can be beside
+                you — supporting you, making you laugh,
+                annoying you a little 😜, and loving you
+                more with every passing day.
+            </p>
+
+            <p>
+                Thank you for being you, Sofii.
+                Thank you for bringing so much happiness
+                into my life.
+            </p>
+
+            <p>
+                I hope this birthday is only the beginning
+                of another beautiful year of your life.
+                And I hope I get to be part of many,
+                many more birthdays with you. ❤️
+            </p>
+
+            <p class="final-love">
+                Happy Birthday, my love. 🎂💕
+                <br><br>
+                I love you more than words can say.
+                <br>
+                Today, tomorrow, and always. ❤️
+            </p>
+
+            <p class="signature">
+                Forever yours,
+                <br>
+                ❤️
+            </p>
+
+        </div>
+
+        <button
+            class="continue"
+            onclick="showGiftPage()">
+            There's More... 🎁
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GIFTS PAGE
+========================================================= -->
+
+<section id="giftPage" class="page">
+
+    <div class="card">
+
+        <div class="sticker-area">
+            <div class="sticker">🧸💕</div>
+            <div class="sticker">🎁</div>
+            <div class="sticker">💗</div>
+        </div>
+
+        <h1>
+            Three Little Gifts
+        </h1>
+
+        <p>
+            Choose one, Sofii... 🥰
+            <br>
+            Each one has a little surprise.
+        </p>
+
+        <div class="gifts">
+
+            <div class="gift" onclick="openGift1()">
+                <div class="gift-box">🎁</div>
+                <p>Gift 1 🎵</p>
+            </div>
+
+            <div class="gift" onclick="openGift2()">
+                <div class="gift-box">🎁</div>
+                <p>Gift 2 📸</p>
+            </div>
+
+            <div class="gift" onclick="openGift3()">
+                <div class="gift-box">🎁</div>
+                <p>Gift 3 💖</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GIFT 1 — SONG
+========================================================= -->
+
+<section id="gift1Page" class="page">
+
+    <div class="card music-card">
+
+        <div class="sticker-area">
+            <div class="sticker">🧸🎵</div>
+            <div class="sticker">❤️</div>
+        </div>
+
+        <h1>
+            A Song For You 🎶
+        </h1>
+
+        <p>
+            I chose this song especially for you. ❤️
+        </p>
+
+        <div class="video-container">
+
+            <iframe
+                id="youtubePlayer"
+                src=""
+                title="Song for Sofii"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+        <p>
+            Close your eyes...
+            listen to the song...
+            and think about us. 🥺
+        </p>
+
+        <button
+            class="back-button"
+            onclick="goBackToGifts()">
+            ← Back to Gifts
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GIFT 2 — PHOTOS
+========================================================= -->
+
+<section id="gift2Page" class="page">
+
+    <div class="photo-page">
+
+        <div class="sticker-area">
+            <div class="sticker">🧸📸</div>
+            <div class="sticker">💕</div>
+        </div>
+
+        <h1 class="photo-title">
+            Our Little Memories ❤️
+        </h1>
+
+        <p>
+            Choose your three favorite photos.
+        </p>
+
+        <br>
+
+        <input
+            class="photo-input"
+            type="file"
+            accept="image/*"
+            id="photo1"
+            onchange="loadPhoto(1)"
+        >
+
+        <input
+            class="photo-input"
+            type="file"
+            accept="image/*"
+            id="photo2"
+            onchange="loadPhoto(2)"
+        >
+
+        <input
+            class="photo-input"
+            type="file"
+            accept="image/*"
+            id="photo3"
+            onchange="loadPhoto(3)"
+        >
+
+        <div class="photo-gallery">
+
+            <div class="photo-card">
+
+                <img id="img1" alt="Memory 1">
+
+                <div class="photo-caption">
+                    Your smile... ❤️
+                </div>
+
+            </div>
+
+            <div class="photo-card">
+
+                <img id="img2" alt="Memory 2">
+
+                <div class="photo-caption">
+                    Simply beautiful. 💕
+                </div>
+
+            </div>
+
+            <div class="photo-card">
+
+                <img id="img3" alt="Memory 3">
+
+                <div class="photo-caption">
+                    My favorite person. 💗
+                </div>
+
+            </div>
+
+        </div>
+
+        <p>
+            Every picture of you makes me smile.
+            <br>
+            But my favorite thing will always be
+            seeing you happy. ❤️
+        </p>
+
+        <button
+            class="back-button"
+            onclick="goBackToGifts()">
+            ← Back to Gifts
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GIFT 3 — WISH
+========================================================= -->
+
+<section id="gift3Page" class="page">
+
+    <div class="stars"></div>
+
+    <div class="final-content">
+
+        <div class="big-heart">❤️</div>
+
+        <h1 class="final-title">
+            Sofii
+        </h1>
+
+        <h2 class="final-subtitle">
+            My Wish For You ✨
+        </h2>
+
+        <div class="sticker-area">
+            <div class="sticker">🧸💕</div>
+            <div class="sticker">💖</div>
+            <div class="sticker">🧸❤️</div>
+        </div>
+
+        <div class="final-letter">
+
+            <p>
+                My wish for you, Sofii, is not just for
+                today, but for every day that comes after it. ❤️
+            </p>
+
+            <p>
+                I hope life gives you countless reasons
+                to smile, the courage to chase every dream
+                in your heart, and the strength to get through
+                every difficult moment.
+            </p>
+
+            <p>
+                I hope you always remember how precious,
+                beautiful, and special you are.
+            </p>
+
+            <p>
+                And if I could make one wish for myself,
+                it would be to see that beautiful smile of
+                yours for many, many years to come.
+            </p>
+
+            <p>
+                I want to be there for your happiest moments,
+                hold your hand through the difficult ones,
+                and create memories with you that we can
+                look back on someday and smile about. 💕
+            </p>
+
+            <p>
+                No matter where life takes us,
+                I hope you always know that you have
+                a very special place in my heart.
+            </p>
+
+            <p class="final-wish">
+
+                My biggest wish is simple...
+
+                <br><br>
+
+                I just want you to be happy. ❤️
+
+                <br><br>
+
+                And if I can be one of the reasons
+                behind that smile, then I'll consider
+                myself the luckiest person in the world. 🥺
+
+            </p>
+
+        </div>
+
+        <div class="forever">
+            Happy Birthday, My Beautiful Sofii 🎂❤️
+        </div>
+
+        <button
+            class="continue"
+            onclick="openLastPage()">
+            One Last Thing... 💌
+        </button>
+
+        <button
+            class="back-button"
+            onclick="goBackToGifts()">
+            ← Back to Gifts
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL PAGE
+========================================================= -->
+
+<section id="lastPage" class="page last-page">
+
+    <div class="card last-card">
+
+        <div class="last-bears">
+            🧸💕🧸
+        </div>
+
+        <div class="last-heart">
+            ❤️
+        </div>
+
+        <h1 class="last-title">
+            I Think You Like This 🥺
+        </h1>
+
+        <p class="last-message">
+
+            I hope this little surprise made you smile,
+            even just a little. ❤️
+
+            <br><br>
+
+            I made every part of it with you in mind,
+            because you deserve something as special
+            as you are.
+
+            <br><br>
+
+            Happy Birthday again, Sofii. 🎂💕
+
+            <br><br>
+
+            Thank you for being you. ❤️
+
+        </p>
+
+        <div class="sticker-area">
+
+            <div class="sticker">🧸❤️</div>
+
+            <div class="sticker">💕</div>
+
+            <div class="sticker">🧸💗</div>
+
+        </div>
+
+        <button
+            class="back-button"
+            onclick="goToFirstPage()">
+            🔄 Go Back
+        </button>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================================================
+   PAGE SWITCH
+========================================================= */
+
+function switchPage(from,to) {
+
+    document
+        .getElementById(from)
+        .classList.remove("active");
+
+    document
+        .getElementById(to)
+        .classList.add("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =========================================================
+   PASSWORD
+========================================================= */
+
+function checkPassword() {
+
+    const password =
+        document.getElementById("password").value;
+
+    const error =
+        document.getElementById("passwordError");
+
+    if(password === "lilu") {
+
+        switchPage(
+            "passwordPage",
+            "page1"
+        );
+
+        createBurst();
+
+    } else {
+
+        error.style.display = "block";
+
+        document
+            .getElementById("password")
+            .value = "";
+
+        setTimeout(function(){
+
+            error.style.display = "none";
+
+        },2000);
+    }
+}
+
+
+/* =========================================================
+   YES
+========================================================= */
+
+function yesClicked() {
+
+    switchPage(
+        "page1",
+        "page2"
+    );
+
+    createBurst();
+}
+
+
+/* =========================================================
+   NO
+========================================================= */
+
+function noClicked() {
+
+    const message =
+        document.getElementById("noMessage");
+
+    message.style.display = "block";
+
+    createSmallHeartBurst();
+
+    setTimeout(function(){
+
+        message.style.display = "none";
+
+    },2500);
+}
+
+
+/* =========================================================
+   LETTER → GIFTS
+========================================================= */
+
+function showGiftPage() {
+
+    switchPage(
+        "page2",
+        "giftPage"
+    );
+}
+
+
+/* =========================================================
+   GIFT 1 — SONG
+========================================================= */
+
+function openGift1() {
+
+    switchPage(
+        "giftPage",
+        "gift1Page"
+    );
+
+    document
+        .getElementById("youtubePlayer")
+        .src =
+        "https://www.youtube.com/embed/LUgpPmj6nR8?autoplay=1";
+}
+
+
+/* =========================================================
+   GIFT 2
+========================================================= */
+
+function openGift2() {
+
+    switchPage(
+        "giftPage",
+        "gift2Page"
+    );
+}
+
+
+/* =========================================================
+   PHOTO UPLOAD
+========================================================= */
+
+function loadPhoto(number) {
+
+    const input =
+        document.getElementById(
+            "photo" + number
+        );
+
+    const image =
+        document.getElementById(
+            "img" + number
+        );
+
+    if(
+        input.files &&
+        input.files[0]
+    ){
+
+        const reader =
+            new FileReader();
+
+        reader.onload =
+            function(event){
+
+                image.src =
+                    event.target.result;
+
+            };
+
+        reader.readAsDataURL(
+            input.files[0]
+        );
+    }
+}
+
+
+/* =========================================================
+   GIFT 3
+========================================================= */
+
+function openGift3() {
+
+    switchPage(
+        "giftPage",
+        "gift3Page"
+    );
+
+    createBurst();
+
+    startFloatingHearts();
+}
+
+
+/* =========================================================
+   BACK TO GIFTS
+========================================================= */
+
+function goBackToGifts() {
+
+    document
+        .getElementById("youtubePlayer")
+        .src = "";
+
+    document
+        .querySelectorAll(".page")
+        .forEach(function(page){
+
+            page.classList.remove("active");
+
+        });
+
+    document
+        .getElementById("giftPage")
+        .classList.add("active");
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+
+/* =========================================================
+   LAST PAGE
+========================================================= */
+
+function openLastPage() {
+
+    switchPage(
+        "gift3Page",
+        "lastPage"
+    );
+
+    createHugeConfetti();
+
+    createBurst();
+}
+
+
+/* =========================================================
+   GO BACK TO FIRST PAGE
+========================================================= */
+
+function goToFirstPage() {
+
+    document
+        .getElementById("youtubePlayer")
+        .src = "";
+
+    document
+        .querySelectorAll(".page")
+        .forEach(function(page){
+
+            page.classList.remove("active");
+
+        });
+
+    document
+        .getElementById("passwordPage")
+        .classList.add("active");
+
+    document
+        .getElementById("password")
+        .value = "";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    createBurst();
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+let heartsStarted = false;
+
+function startFloatingHearts() {
+
+    if(heartsStarted) return;
+
+    heartsStarted = true;
+
+    const emojis = [
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "💘",
+        "✨",
+        "💫",
+        "🌸",
+        "🥰",
+        "🧸"
+    ];
+
+    setInterval(function(){
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "floating-heart";
+
+        item.innerHTML =
+            emojis[
+                Math.floor(
+                    Math.random()*emojis.length
+                )
+            ];
+
+        item.style.left =
+            Math.random()*100+"vw";
+
+        item.style.fontSize =
+            (15+Math.random()*28)+"px";
+
+        item.style.animationDuration =
+            (5+Math.random()*5)+"s";
+
+        document.body.appendChild(item);
+
+        setTimeout(function(){
+
+            item.remove();
+
+        },10000);
+
+    },700);
+}
+
+
+/* =========================================================
+   HEART BURST
+========================================================= */
+
+function createBurst() {
+
+    const emojis = [
+        "❤️",
+        "💕",
+        "💗",
+        "💖",
+        "✨"
+    ];
+
+    for(
+        let i=0;
+        i<25;
+        i++
+    ){
+
+        setTimeout(function(){
+
+            const heart =
+                document.createElement("div");
+
+            heart.className =
+                "floating-heart";
+
+            heart.innerHTML =
+                emojis[
+                    Math.floor(
+                        Math.random()*emojis.length
+                    )
+                ];
+
+            heart.style.left =
+                Math.random()*100+"vw";
+
+            heart.style.fontSize =
+                (18+Math.random()*25)+"px";
+
+            heart.style.animationDuration =
+                (4+Math.random()*3)+"s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function(){
+
+                heart.remove();
+
+            },8000);
+
+        },i*80);
+    }
+}
+
+
+/* =========================================================
+   SMALL HEART BURST
+========================================================= */
+
+function createSmallHeartBurst() {
+
+    for(
+        let i=0;
+        i<8;
+        i++
+    ){
+
+        setTimeout(function(){
+
+            const heart =
+                document.createElement("div");
+
+            heart.className =
+                "floating-heart";
+
+            heart.innerHTML = "❤️";
+
+            heart.style.left =
+                (40+Math.random()*20)+"vw";
+
+            heart.style.fontSize = "20px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function(){
+
+                heart.remove();
+
+            },6000);
+
+        },i*100);
+    }
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function createHugeConfetti() {
+
+    const colors = [
+        "#ff6f91",
+        "#ff9db2",
+        "#ffd1dc",
+        "#ffffff",
+        "#c27aa0",
+        "#e6a8bd"
+    ];
+
+    for(
+        let i=0;
+        i<120;
+        i++
+    ){
+
+        setTimeout(function(){
+
+            const piece =
+                document.createElement("div");
+
+            piece.className =
+                "confetti";
+
+            piece.style.left =
+                Math.random()*100+"vw";
+
+            piece.style.background =
+                colors[
+                    Math.floor(
+                        Math.random()*colors.length
+                    )
+                ];
+
+            piece.style.width =
+                (5+Math.random()*8)+"px";
+
+            piece.style.height =
+                (5+Math.random()*12)+"px";
+
+            piece.style.animationDuration =
+                (3+Math.random()*3)+"s";
+
+            document.body.appendChild(piece);
+
+            setTimeout(function(){
+
+                piece.remove();
+
+            },7000);
+
+        },i*20);
+    }
+}
+
+
+/* =========================================================
+   CLICK HEARTS
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target.tagName === "BUTTON" ||
+            event.target.tagName === "INPUT"
+        ){
+            return;
+        }
+
+        const heart =
+            document.createElement("div");
+
+        heart.innerHTML = "♥";
+
+        heart.style.position = "fixed";
+
+        heart.style.left =
+            event.clientX+"px";
+
+        heart.style.top =
+            event.clientY+"px";
+
+        heart.style.color = "#ff7194";
+
+        heart.style.fontSize = "20px";
+
+        heart.style.pointerEvents = "none";
+
+        heart.style.zIndex = "9999";
+
+        heart.style.animation =
+            "clickHeart 1s ease forwards";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function(){
+
+            heart.remove();
+
+        },1000);
+    }
+);
+
+</script>
+
+</body>
+</html>
