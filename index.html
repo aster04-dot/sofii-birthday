@@ -348,7 +348,7 @@ button:hover {
     box-shadow: 0 15px 35px rgba(0,0,0,.35);
 }
 
-.yes,
+   
 .unlock,
 .continue {
     background: #a84f6c;
@@ -1595,7 +1595,11 @@ input[type="password"]:focus {
 ========================================================= */
 
 @media(max-width:600px) {
-
+<script>
+document.querySelector(".unlock").onclick = function() {
+    alert("Unlock भयो!");
+};
+</script>
     body::before {
         inset: 7px;
         border-radius: 18px;
