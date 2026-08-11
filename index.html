@@ -2396,41 +2396,36 @@ function openGift2() {
    PHOTO UPLOAD
 ========================================================= */
 
-function loadPhoto(number) {
+<!-- =========================
+     PHOTO UPLOAD
+========================= -->
 
-    const input =
-        document.getElementById(
-            "photo" + number
-        );
+<div class="photo-gallery">
 
-    const image =
-        document.getElementById(
-            "img" + number
-        );
+  <div class="photo-card">
+    <img src="sofi.jpg" alt="Memory 1">
+    <div class="photo-caption">
+      Your smile... ❤️
+    </div>
+  </div>
 
-    if(
-        input.files &&
-        input.files[0]
-    ){
+  <div class="photo-card">
+    <img src="sofi2.jpg" alt="Memory 2">
+    <div class="photo-caption">
+      Simply beautiful. 💗
+    </div>
+  </div>
 
-        const reader =
-            new FileReader();
+  <div class="photo-card">
+    <img src="sofi3.jpg" alt="Memory 3">
+    <div class="photo-caption">
+      My favorite memory. 💕
+    </div>
+  </div>
 
-        reader.onload =
-            function(event){
+</div>
 
-                image.src =
-                    event.target.result;
-
-            };
-
-        reader.readAsDataURL(
-            input.files[0]
-        );
-    }
-}
-
-
+<!-- GIFT 3 -->
 /* =========================================================
    GIFT 3
 ========================================================= */
